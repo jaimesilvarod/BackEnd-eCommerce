@@ -1,4 +1,4 @@
-<table id="tabla" class="table  table-bordered" style="width:100%">
+<table id="tabla" class="table table-bordered" style="width:100%">
     <thead>
         <tr>
             <th>Categoría</th>
@@ -20,8 +20,6 @@
         </tr>
     </tfoot>
 </table>
-</div>
-
 
 <div class="modal fade" id="remModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -45,11 +43,25 @@
     </div>
 </div>
 
-
-
-
 <script type="text/javascript">
-    showListadoProductos();
+    $(document).ready(function() {
+        $('#tabla').DataTable({
+            "ajax": "producto/getjson_ListadoProductos/productos",
+            "columns": [
+                {"data": "idCategoria"},
+                {"data": "idMarca"},
+                {"data": "descripcion"},
+                {"data": "pvp"},
+                {"data": "impuesto"},
+                {
+                    "data": null,
+                    "render": function(data, type, row) {
+                        return '<button class="btn btn-danger" onclick="dialogrem(' + data.idProducto + ')">Eliminar</button>';
+                    }
+                }
+            ]
+        });
+    });
 
     function dialogrem(ID) {
         $('#idRegistro').val(ID);
@@ -61,20 +73,16 @@
         $.ajax({
             url: "producto/delete/" + $("#idRegistro").val(),
         }).done(function(data) {
-
             var tbProductos = $('#tabla').DataTable();
             tbProductos.ajax.reload(null, false);
             $('#remModal').modal('hide');
-
         }).fail(function(jqXHR, textStatus, errorThrown) {
-
             if (jqXHR.responseJSON.error)
                 $("#msgalert").html(jqXHR.responseJSON.error);
 
             $("#delete-alert").fadeTo(5000, 500).slideUp(500, function() {
                 $("#delete-alert").slideUp(500);
             });
-
         });
     }
 </script>

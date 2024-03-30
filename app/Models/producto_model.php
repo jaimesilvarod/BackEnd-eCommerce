@@ -3,14 +3,12 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
-use Exception;
-
 
 class producto_model extends Model
 {
     protected $table = 'producto';
-    protected $primaryKey       = 'id';
-    protected $allowedFields = ['idcategoria', 'idmarca', 'descripcion', 'precio', 'pvp', 'impuesto', 'foto'];
+    protected $primaryKey = 'idProducto';
+    protected $allowedFields = ['idCategoria', 'idMarca', 'modelo', 'nombre', 'descripcion', 'precio', 'pvp', 'impuesto'];
 
     public function execQuery($Query)
     {
@@ -18,40 +16,36 @@ class producto_model extends Model
         return $query->getNumRows() > 0 ? $query : false;
     }
 
-
     public function getListado()
     {
-        $query = $this->db->query("SELECT Concat('r_',id) as dt_rowid, c.nombre_categoria as idcategoria, m.nombre_marca as idmarca, p.id, p.descripcion, precio, pvp, impuesto, foto 
-         FROM producto p, categorias c, marcas m where p.idcategoria = c.id_categoria and p.idmarca = m.id_marca  order by id;");
+        $query = $this->db->query("SELECT idProducto, idCategoria, idMarca, nombre, descripcion, precio, pvp, impuesto FROM producto ORDER BY idProducto");
         return $query->getResultArray();
     }
 
     public function findById($id)
     {
-        $query = $this->db->query("SELECT c.nombre_categoria as categoria, m.nombre_marca as marca, p.descripcion, precio, pvp, impuesto, foto 
-         FROM producto p, categorias c, marcas m where p.idcategoria = c.id_categoria and p.idmarca = m.id_marca and p.id=" . $id . " order by id;");
-        return $query->getResultArray();
+        $query = $this->db->query("SELECT idProducto, idCategoria, idMarca, nombre, descripcion, precio, pvp, impuesto FROM producto WHERE idProducto = $id");
+        return $query->getRowArray();
     }
-
-    /*public function findById()
-    {
-       return $this->asArray()->where(['id' => $id])->first();
-    }*/
-
 
     public function getListadoGrid($IDCat, $IDMarca)
     {
-        $sql = "SELECT c.id_categoria as categoria_id, c.nombre_categoria as categoria, m.nombre_marca as marca, p.*
-        FROM producto p, marcas m, categorias  c
-        WHERE m.id_marca = p.idmarca and c.id_categoria = p.idcategoria ";
-        if ($IDCat > 0)  $sql = $sql . " and c.id_categoria=$IDCat ";
-        if ($IDMarca > 0) $sql = $sql . " and m.id_marca=$IDMarca ";
+        $sql = "SELECT idProducto, idCategoria, idMarca, nombre, descripcion, precio, pvp, impuesto FROM producto";
+        if ($IDCat > 0)  $sql .= " WHERE idCategoria = $IDCat";
+        if ($IDMarca > 0) {
+            if ($IDCat > 0) $sql .= " AND";
+            else $sql .= " WHERE";
+            $sql .= " idMarca = $IDMarca";
+        }
 
-        $sql = $sql . " order by c.nombre_categoria, m.nombre_marca, p.descripcion";
+        $sql .= " ORDER BY idProducto";
+
         $query = $this->execQuery($sql);
-        if ($query)
+        if ($query) {
             return ['data' => $query->getResultArray()];
-        else
+        } else {
             return false;
+        }
     }
 }
+

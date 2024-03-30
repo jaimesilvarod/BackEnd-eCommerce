@@ -158,6 +158,8 @@ class App extends BaseConfig
      */
     public array $proxyIPs = [];
 
+    public $ENVIRONMENT = 'development';
+
     /**
      * --------------------------------------------------------------------------
      * Content Security Policy

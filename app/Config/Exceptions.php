@@ -65,6 +65,9 @@ class Exceptions extends BaseConfig
      */
     public bool $logDeprecations = true;
 
+    public $debug = true;
+    public $display = 1;
+
     /**
      * --------------------------------------------------------------------------
      * LOG LEVEL THRESHOLD FOR DEPRECATIONS
