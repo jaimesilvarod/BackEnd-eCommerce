@@ -8,18 +8,21 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
 
-  $routes->get('producto/add_nuevo', 'Producto::addproducto');
+  
+});
+
+$routes->get('producto/add_nuevo', 'Producto::addproducto');
 
   $routes->get('panel', 'Home::panel');
   $routes->get('dashboard', 'Home::dashboard');
 
 
-  $routes->get('categoria/getlistadoCB', 'Categoria::getjson_ListadoCategorias/');
-  $routes->get('marca/getlistadoCB/', 'Marca::getjson_ListadoMarcasCB/');
+  //$routes->get('categoria/getlistadoCB', 'Categoria::getjson_ListadoCategorias/');
+  //$routes->get('marca/getlistadoCB/', 'Marca::getjson_ListadoMarcasCB/');
 
 
   $routes->get('producto/nuevo', 'Producto::addproducto');
-  $routes->get('producto/lista', 'Producto::listadoproductos');
+  //$routes->get('producto/lista', 'Producto::listadoproductos');
   $routes->get('producto/lista_grid', 'Producto::viewProductosGrid/0/0/1');
   $routes->get('producto/lista_grid/(:num)', 'Producto::viewProductosGrid/$1/0/1');
   $routes->get('producto/lista_grid/(:num)/(:num)', 'Producto::viewProductosGrid/$1/$2/1');
@@ -30,18 +33,19 @@ $routes->group('', ['filter' => 'AuthCheck'], function ($routes) {
   $routes->get('producto/delete/(:num)', 'Producto::deleteProducto/$1');
 
 
-  $routes->get('carrito/add/(:num)', 'Carrito::addProducto/$1');
-  $routes->get('carrito/countitems', 'Carrito::getCountNotifications');
-  $routes->get('carrito/list', 'Carrito::getItemsNotifications');
-  $routes->get('carrito/clear', 'Carrito::deleteProducts');
-  $routes->get('carrito/vista_listaitems', 'Carrito::viewProductosGrid');
+  // $routes->get('carrito/add/(:num)', 'Carrito::addProducto/$1');
+  // $routes->get('carrito/countitems', 'Carrito::getCountNotifications');
+  // $routes->get('carrito/list', 'Carrito::getItemsNotifications');
+  // $routes->get('carrito/clear', 'Carrito::deleteProducts');
+  // $routes->get('carrito/vista_listaitems', 'Carrito::viewProductosGrid');
 
-  $routes->get('carrito/vista_listaitemstopay', 'Carrito::viewProductosToPay');
-  $routes->get('payphone/response', 'Carrito::responsePayPhone');
-  $routes->get('payphone/done/(:any)/(:any)', 'Carrito::responsePayPhoneDone/$1/$2');
-});
+  // $routes->get('carrito/vista_listaitemstopay', 'Carrito::viewProductosToPay');
+  // $routes->get('payphone/response', 'Carrito::responsePayPhone');
+  // $routes->get('payphone/done/(:any)/(:any)', 'Carrito::responsePayPhoneDone/$1/$2');
 
-
+$routes->get('categoria/getlistadoCB', 'Categoria::getjson_ListadoCategorias/');
+$routes->get('marca/getlistadoCB/', 'Marca::getjson_ListadoMarcasCB/');
+$routes->get('producto/lista', 'Producto::listadoproductos');
 
 $routes->get('/', 'Login::index');
 $routes->get('login', 'Login::index');

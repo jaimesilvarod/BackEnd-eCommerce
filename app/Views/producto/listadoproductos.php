@@ -3,7 +3,10 @@
         <tr>
             <th>Categoría</th>
             <th>Marca</th>
+            <th>Modelo</th>
+            <th>Nombre</th>
             <th>Descripción</th>
+            <th>Precio</th>
             <th>PVP</th>
             <th>Impuesto</th>
             <th>Acciones</th>
@@ -13,7 +16,10 @@
         <tr>
             <th>Categoría</th>
             <th>Marca</th>
+            <th>Modelo</th>
+            <th>Nombre</th>
             <th>Descripción</th>
+            <th>Precio</th>
             <th>PVP</th>
             <th>Impuesto</th>
             <th>Acciones</th>
@@ -46,11 +52,14 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#tabla').DataTable({
-            "ajax": "producto/getjson_ListadoProductos/productos",
+            "ajax": "producto/getListado",
             "columns": [
                 {"data": "idCategoria"},
                 {"data": "idMarca"},
+                {"data": "modelo"},
+                {"data": "nombre"},
                 {"data": "descripcion"},
+                {"data": "precio"},
                 {"data": "pvp"},
                 {"data": "impuesto"},
                 {

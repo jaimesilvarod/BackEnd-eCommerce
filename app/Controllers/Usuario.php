@@ -12,8 +12,8 @@ class Usuario extends BaseController
     {
         $data = [];
         $rules = [
-            'usuario' => 'required|min_length[3]|max_length[20]|existsUser[usuario]',
-            'clave' => 'required|min_length[8]|max_length[20]|validateUser[usuario,clave]',
+            'usuario' => 'required|min_length[3]|max_length[50]|existsUser[usuario]',
+            'clave' => 'required|min_length[8]|max_length[50]|validateUser[usuario,clave]',
         ];
 
         $errors = [
@@ -38,7 +38,7 @@ class Usuario extends BaseController
         } else {
             $model = new usuario_model();
 
-            $user = $model->where('usuario', $this->request->getVar('usuario'))
+            $user = $model->where('correoElectronico', $this->request->getVar('usuario'))
                 ->first();
             $this->setUserSession($user);
 
@@ -50,7 +50,7 @@ class Usuario extends BaseController
     {
         $data = [
             'id' => $user['id'],
-            'usuario' => $user['usuario'],
+            'usuario' => $user['correoElectronico'],
             'nombres' => $user['nombres'],
             'isLoggedIn' => true,
         ];

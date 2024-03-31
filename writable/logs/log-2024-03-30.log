@@ -1,0 +1,353 @@
+CRITICAL - 2024-03-30 10:59:49 --> Undefined array key "clave"
+in APPPATH\Validation\Userrules.php on line 16.
+ 1 APPPATH\Validation\Userrules.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "clave"', 'C:\\wamp64\\www\\tienda\\app\\Validation\\Userrules.php', 16)
+ 2 SYSTEMPATH\Validation\Validation.php(311): App\Validation\Userrules->validateUser('contraseña1', 'usuario,clave', [...], null, 'clave')
+ 3 SYSTEMPATH\Validation\Validation.php(197): CodeIgniter\Validation\Validation->processRules('clave', 'clave', 'contraseña1', [...], [...])
+ 4 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\Usuario.php(35): CodeIgniter\Controller->validate([...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usuario->login()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-30 11:00:34 --> Undefined array key "contrasena"
+in APPPATH\Validation\Userrules.php on line 16.
+ 1 APPPATH\Validation\Userrules.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "contrasena"', 'C:\\wamp64\\www\\tienda\\app\\Validation\\Userrules.php', 16)
+ 2 SYSTEMPATH\Validation\Validation.php(311): App\Validation\Userrules->validateUser('contraseña1', 'usuario,clave', [...], null, 'clave')
+ 3 SYSTEMPATH\Validation\Validation.php(197): CodeIgniter\Validation\Validation->processRules('clave', 'clave', 'contraseña1', [...], [...])
+ 4 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\Usuario.php(35): CodeIgniter\Controller->validate([...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usuario->login()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-03-30 11:00:57 --> Undefined array key "contrasena"
+in APPPATH\Validation\Userrules.php on line 16.
+ 1 APPPATH\Validation\Userrules.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "contrasena"', 'C:\\wamp64\\www\\tienda\\app\\Validation\\Userrules.php', 16)
+ 2 SYSTEMPATH\Validation\Validation.php(311): App\Validation\Userrules->validateUser('contraseña1', 'usuario,clave', [...], null, 'clave')
+ 3 SYSTEMPATH\Validation\Validation.php(197): CodeIgniter\Validation\Validation->processRules('clave', 'clave', 'contraseña1', [...], [...])
+ 4 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 5 APPPATH\Controllers\Usuario.php(35): CodeIgniter\Controller->validate([...], [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Usuario->login()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 11:33:14 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.marcas' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 11:33:14 --> Table 'dbecommercemultielectricos.marcas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_marca) as dt_rowid, id_marca as id, nombre_marca as descripcion  FROM marcas  order by id_marca;')
+ 2 APPPATH\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 11:33:19 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.marcas' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 11:33:19 --> Table 'dbecommercemultielectricos.marcas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_marca) as dt_rowid, id_marca as id, nombre_marca as descripcion  FROM marcas  order by id_marca;')
+ 2 APPPATH\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 11:33:22 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.marcas' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 11:33:22 --> Table 'dbecommercemultielectricos.marcas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_marca) as dt_rowid, id_marca as id, nombre_marca as descripcion  FROM marcas  order by id_marca;')
+ 2 APPPATH\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 11:34:02 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.marcas' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 11:34:02 --> Table 'dbecommercemultielectricos.marcas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_marca) as dt_rowid, id_marca as id, nombre_marca as descripcion  FROM marcas  order by id_marca;')
+ 2 APPPATH\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 11:34:03 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.marcas' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 11:34:03 --> Table 'dbecommercemultielectricos.marcas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_marca) as dt_rowid, id_marca as id, nombre_marca as descripcion  FROM marcas  order by id_marca;')
+ 2 APPPATH\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:14:48 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.marcas' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:14:48 --> Table 'dbecommercemultielectricos.marcas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\marca_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_marca) as dt_rowid, id_marca as id, nombre_marca as descripcion  FROM marcas  order by id_marca;')
+ 2 APPPATH\Controllers\Marca.php(16): App\Models\marca_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Marca->getjson_ListadoMarcasCB('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marca))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:21:08 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:21:08 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:37:27 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:37:27 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:37:31 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:37:31 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:37:32 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:37:32 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:37:32 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:37:32 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:37:44 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:37:44 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:37:45 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:37:45 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:37:45 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:37:45 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:37:45 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:37:45 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-03-30 17:37:45 --> mysqli_sql_exception: Table 'dbecommercemultielectricos.categorias' doesn't exist in C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\wamp64\www\tienda\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT Concat('...', 0)
+#1 C:\wamp64\www\tienda\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT Concat('...')
+#2 C:\wamp64\www\tienda\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT Concat('...')
+#3 C:\wamp64\www\tienda\app\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat('...')
+#4 C:\wamp64\www\tienda\app\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+#5 C:\wamp64\www\tienda\system\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+#6 C:\wamp64\www\tienda\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#7 C:\wamp64\www\tienda\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\tienda\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-03-30 17:37:45 --> Table 'dbecommercemultielectricos.categorias' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\categoria_model.php(23): CodeIgniter\Database\BaseConnection->query('SELECT Concat(\'r_\',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;')
+ 2 APPPATH\Controllers\Categoria.php(16): App\Models\categoria_model->getListado()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Categoria->getjson_ListadoCategorias('')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

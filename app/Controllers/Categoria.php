@@ -3,23 +3,20 @@
 namespace App\Controllers;
 
 use App\Models\categoria_model;
-
+use Exception;
 
 class Categoria extends BaseController
 {
-
-  
-
     ///////////// JSON /////////////////////////
-    public function getjson_ListadoCategorias($ArrayName) {
+    public function getjson_ListadoCategorias($ArrayName)
+    {
         $model = new categoria_model();
         $datos = $model->getListado();
-        if ($datos) 
-            if($ArrayName!="")
-                 echo json_encode([$ArrayName => $datos]);
+        if ($datos)
+            if ($ArrayName != "")
+                echo json_encode([$ArrayName => $datos]);
             else
-            echo json_encode($datos);
-    
+                echo json_encode($datos);
     }
 
 
@@ -56,10 +53,10 @@ class Categoria extends BaseController
         $input = $this->getRequestInput($this->request);
 
         $model = new categoria_model();
-        $subc = $model->findById($id); 
-        if(!$subc) return $this->sendBadRequest("Categoría a actualizar No existe");
-        
-        
+        $subc = $model->findById($id);
+        if (!$subc) return $this->sendBadRequest("Categoría a actualizar No existe");
+
+
 
         $rules = [
             'descripcion' => [
@@ -71,9 +68,9 @@ class Categoria extends BaseController
         if (!$this->validateRequest($input, $rules))
             return $this->sendResponse(['validaciones' => $this->getErrorsAsArray($this->validator->getErrors())], ResponseInterface::HTTP_BAD_REQUEST);
 
-     
 
-       try {
+
+        try {
             $model->update($id, $input);
             return $this->sendResponse(['message' => 'Categoría editada correctamente']);
         } catch (Exception $e) {
@@ -89,17 +86,16 @@ class Categoria extends BaseController
 
 
         $model = new categoria_model();
-        $subc = $model->findById($id); 
-        if(!$subc) return $this->sendBadRequest("Categoría a eliminar No existe");
-        
-        if($model->hasSubCategorias($id)) return $this->sendBadRequest("Categoría ".$subc['descripcion']." tiene SubCategorías registradas, NO se puede eliminar");
-        
-       try {
+        $subc = $model->findById($id);
+        if (!$subc) return $this->sendBadRequest("Categoría a eliminar No existe");
+
+        if ($model->hasSubCategorias($id)) return $this->sendBadRequest("Categoría " . $subc['descripcion'] . " tiene SubCategorías registradas, NO se puede eliminar");
+
+        try {
             $model->delete($id);
             return $this->sendResponse(['message' => 'Categoría eliminada correctamente']);
         } catch (Exception $e) {
             return $this->sendResponse(['error' => $e->getMessage()], ResponseInterface::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
-      
 }

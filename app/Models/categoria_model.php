@@ -8,9 +8,9 @@ use Exception;
 
 class categoria_model extends Model
 {
-    protected $table = 'categorias';
+    protected $table = 'categoria';
     protected $primaryKey       = 'id';
-    protected $allowedFields = ['nombre_categoria'];
+    protected $allowedFields = ['nombre'];
     
     public function execQuery($Query){
         $query = $this->db->query($Query);
@@ -20,7 +20,7 @@ class categoria_model extends Model
     
     public function getListado()
     {
-        $query = $this->db->query("SELECT Concat('r_',id_categoria) as dt_rowid, id_categoria as id, nombre_categoria as descripcion  FROM categorias  order by id_categoria;");
+        $query = $this->db->query("SELECT Concat('r_',idCategoria) as dt_rowid, idCategoria as id, nombre as descripcion  FROM categoria  order by idCategoria;");
         return $query->getResultArray();
     }
 

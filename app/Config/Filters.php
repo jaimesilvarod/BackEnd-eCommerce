@@ -27,7 +27,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         "AuthCheck"     => AuthCheck::class
- ];
+    ];
 
     /**
      * List of filter aliases that are always

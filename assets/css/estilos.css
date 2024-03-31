@@ -1,0 +1,28 @@
+/* Panel de Administración */
+/* ----------------------- */
+.sidebar-dark .nav-item .nav-link {
+    background-color: black;
+    margin: 5px 1px 5px 1px;
+    padding: 8px !important;
+    border-radius: 20px;
+}
+
+.sidebar-dark .nav-item .nav-link:hover {
+    background-color: rgb(32, 31, 31);
+    margin: 5px 1px 5px 1px;
+    padding: 8px !important;
+    border-radius: 20px;
+}
+
+#dashboardLink{
+    background-color:rgba(0,0,0,.0);
+}
+
+#dashboardLink:hover{
+    background-color: rgba(0,0,0,.1)!important;
+}
+
+.menuLines{
+    border: 0.02rem solid #bdc704;
+    width: 100%;
+}

@@ -29,6 +29,26 @@
                             <div class="row mb-2" style="margin: 0.5em 0.5em 0.5em 0.5em;">
 
                                 <div class="col-sm-11" style="margin: 0.5em 0.5em 0.5em 0.5em;">
+                                    <label for="regModelo"><i class="fas fa-star"></i> Modelo </label>
+                                    <input id="regModelo" name="regModelo" type="text" class="form-control" style="text-transform:uppercase" maxlength="100" minlength="3" placeholder="Modelo del producto" required>
+                                    <div class="valid-feedback">Modelo válido</div>
+                                    <div class="invalid-feedback">Escriba el Modelo del Producto</div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2" style="margin: 0.5em 0.5em 0.5em 0.5em;">
+
+                                <div class="col-sm-11" style="margin: 0.5em 0.5em 0.5em 0.5em;">
+                                    <label for="regNombreProducto"><i class="fas fa-star"></i> Nombre </label>
+                                    <input id="regNombreProducto" name="regNombreProducto" type="text" class="form-control" style="text-transform:uppercase" maxlength="100" minlength="3" placeholder="Nombre del producto" required>
+                                    <div class="valid-feedback">Nombre válido</div>
+                                    <div class="invalid-feedback">Escriba el nombre del Producto</div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2" style="margin: 0.5em 0.5em 0.5em 0.5em;">
+
+                                <div class="col-sm-11" style="margin: 0.5em 0.5em 0.5em 0.5em;">
                                     <label for="regDescripcion"><i class="fas fa-star"></i> Descripción </label>
                                     <input id="regDescripcion" name="regDescripcion" type="text" class="form-control" style="text-transform:uppercase" maxlength="100" minlength="3" placeholder="Descripción del producto" required>
                                     <div class="valid-feedback">Descripción válido</div>

@@ -12,6 +12,7 @@
     <title>Tienda Virtual 2024</title>
 
     <!-- Custom fonts for this template-->
+    <link href="assets/css/estilos.css" rel="stylesheet" type="text/css">
     <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -21,9 +22,9 @@
     <link href="<?= base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<?= base_url(); ?>assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>assets/css/icon.css" rel="stylesheet">
-    <link href="<?= base_url(); ?>assets/imgs/logotienda.png" rel="icon">
+    <link href="<?= base_url(); ?>assets/imgs/logo_multielectricos_transparente.png" rel="icon">
 
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 
@@ -51,12 +52,9 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon">
-                    <i class="fas fa-store"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">e-Commerce</div>
+            <!-- Logo principal -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url(); ?>">
+                <div class="sidebar-brand-text mx-3"><img class="img-fluid" src="<?= base_url(); ?>assets/imgs/logo_multielectricos_transparente.png" alt=""></div>
             </a>
 
             <!-- Divider -->
@@ -64,9 +62,9 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="javascript:ajaxLoadContentPanel('dashboard','');">
+                <a id ="dashboardLink" class="nav-link" href="<?= base_url(); ?>panel">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Panel de administración</span></a>
             </li>
 
             <!-- Divider -->
@@ -193,15 +191,15 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - AlerCts -->
+                        <!-- Nav Item - AlerCts
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-shopping-cart"></i>
                                 <span class="badge badge-danger badge-counter">
                                     <div id="countitems">0</div>
                                 </span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
+                            </a> -->
+                            <!-- Dropdown - Alerts 
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Items del Carrito $<span id="totalitems">0</span>
@@ -210,7 +208,8 @@
                                     <div>
 
                                     </div>
-                        </li>
+                                    
+                        </li> -->
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -358,10 +357,10 @@
     <script src="https://pay.payphonetodoesposible.com/api/button/js?appId=wgf56Tv9tUG3fpVsiviE7w"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
+        /*$(document).ready(function() {
             ajaxLoadContentPanel('dashboard', '');
             ajaxLoadCountItemsCar('carrito/countitems');
-        });
+        });*/
     </script>
 
 </body>

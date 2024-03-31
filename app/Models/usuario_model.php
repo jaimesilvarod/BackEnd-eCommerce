@@ -8,10 +8,7 @@ use Exception;
 
 class usuario_model extends Model
 {
-    protected $table = 'usuarios';
+    protected $table = 'cliente';
     protected $primaryKey       = 'id';
-    protected $allowedFields = ['usuario','clave','nombres'];
-    
-
-   
+    protected $allowedFields = ['correoElectronico', 'ccontrasena', 'nombres', 'apellidos'];
 }
